@@ -1,2 +1,1 @@
-# vite-app
-vite-app-template
+# App template
