@@ -1,17 +1,14 @@
-import { defineConfig } from "vite";
-import path from "path";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite';
+import path from 'path';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  envDir: "env",
+  envDir: 'env',
   plugins: [react()],
   resolve: {
-    alias: [
-      { find: "@", replacement: path.resolve(__dirname, "./src") },
-      { find: "@public", replacement: path.resolve(__dirname, "./public") },
-    ],
+    alias: [{ find: '~', replacement: path.resolve(__dirname, './src') }],
   },
-  // build: {
-  //   minify: false,
-  // },
+  build: {
+    sourcemap: false,
+  },
 });

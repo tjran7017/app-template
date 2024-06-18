@@ -1,14 +1,15 @@
-import React, { lazy } from "react";
-import { Route, Routes } from "react-router-dom";
-import Main from "./pages/main";
-const LoadMap = lazy(async () => await import("./pages/load-map"));
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { AppErrorBoundary } from '~/comp/ErrorBoundary';
+import Main from '~/pages/main';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Main />} />
-      <Route path="/load-map" element={<LoadMap />} />
-    </Routes>
+    <AppErrorBoundary>
+      <Routes>
+        <Route path="/" element={<Main />} />
+      </Routes>
+    </AppErrorBoundary>
   );
 }
 

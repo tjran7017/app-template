@@ -1,35 +1,63 @@
 module.exports = {
+  extends: [
+    'prettier',
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:import/recommended',
+    'plugin:jsx-a11y/recommended',
+    'eslint-config-prettier',
+  ],
+  plugins: ['react', 'react-hooks', 'prettier', 'jsx-a11y', 'import'],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    jest: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'standard-with-typescript',
-    'plugin:react-hooks/recommended',
-    'plugin:prettier/recommended'
-  ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['./tsconfig.json']
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
-  plugins: [
-    'react',
-    'react-hooks',
-    'import',
-    '@typescript-eslint'
-  ],
   rules: {
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    "prettier/prettier":
-      ["error",
-        {
-          "tabWidth": 2,
-          "bracketSpacing": true,
-          "semi": true,
-          "useTabs": false,
-        }
-      ]
-  }
-}
+    'import/extensions': 'off',
+    'import/no-unresolved': 'off',
+    'react/prop-types': 'off',
+    'prettier/prettier': 'error',
+    'jsx-a11y/anchor-is-valid': 'off',
+    'react-hooks/exhaustive-deps': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'no-unused-expressions': ['error', { allowShortCircuit: true, allowTernary: true }],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
+      },
+    ],
+    'linebreak-style': 'off',
+    'implicit-arrow-linebreak': 'off',
+    indent: 'off',
+    'object-curly-newline': 'off',
+    'operator-linebreak': 'off',
+    'no-confusing-arrow': 'off',
+    'function-paren-newline': 'off',
+    'no-mixed-operators': 'off',
+    'no-underscore-dangle': 'off',
+    'no-plusplus': 'off',
+    'no-param-reassign': 'off',
+    'no-unused-vars': 'off',
+  },
+};

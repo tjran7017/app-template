@@ -1,8 +1,12 @@
-import React from "react";
-import Main from "@/comp/Main";
+import { Main } from '~/comp/Main';
 
 function Page() {
-  return <Main />;
+  return (
+    <Main>
+      <Main.Icons />
+      <Main.Text />
+    </Main>
+  );
 }
 
 export default Page;
