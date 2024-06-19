@@ -1,4 +1,4 @@
-import { MainWrap } from './MainWrap';
+import { Main as MainWrap } from './Main';
 import { MainText } from './MainText';
 import { MainIcons } from './MainIcons';
 

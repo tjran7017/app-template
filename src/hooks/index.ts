@@ -1,1 +1,1 @@
-//
+export { useSetting } from './useSetting';

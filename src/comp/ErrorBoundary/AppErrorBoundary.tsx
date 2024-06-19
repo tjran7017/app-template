@@ -1,11 +1,14 @@
-import React, { PropsWithChildren } from 'react';
+import React, {ErrorInfo, PropsWithChildren} from 'react';
 
 interface State {
   hasError: boolean;
 }
 
-export class AppErrorBoundary extends React.Component<PropsWithChildren<{}>, State> {
-  constructor(props) {
+interface Props {
+}
+
+export class AppErrorBoundary extends React.Component<PropsWithChildren<Props>, State> {
+  constructor(props: Props) {
     super(props);
     this.state = { hasError: false };
   }
@@ -14,7 +17,7 @@ export class AppErrorBoundary extends React.Component<PropsWithChildren<{}>, Sta
     return { hasError: true };
   }
 
-  componentDidCatch(error, errorInfo) {}
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {}
 
   render() {
     if (this.state.hasError) {
