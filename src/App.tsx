@@ -1,14 +1,17 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { AppErrorBoundary } from '~/comp/ErrorBoundary';
-import Main from '~/pages/main';
+import Index from '~/pages';
+import { SettingContextProvider } from '~/contexts';
 
 function App() {
   return (
     <AppErrorBoundary>
-      <Routes>
-        <Route path="/" element={<Main />} />
-      </Routes>
+      <SettingContextProvider>
+        <Routes>
+          <Route path="/" element={<Index />} />
+        </Routes>
+      </SettingContextProvider>
     </AppErrorBoundary>
   );
 }
