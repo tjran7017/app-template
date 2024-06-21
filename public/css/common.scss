@@ -1,5 +1,74 @@
-body {
-  //background: #54B4F5;
-  overflow: hidden;
+@import './variables';
+
+@font-face {
+  font-family: 'Jalnan';
+  src: url('../assets/fonts/Jalnan2TTF.ttf');
 }
 
+@font-face {
+  font-family: 'MaruBuri Light';
+  src: url('../assets/fonts/MaruBuri-Light.ttf');
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+
+body {
+  margin: 0;
+  color: $dark;
+  font-family: "Jalnan", serif;
+  letter-spacing: 2px;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: $dark;
+}
+
+p {
+  margin: 0;
+}
+
+.w50 {
+  width: 50%;
+}
+
+.w80 {
+  width: 80%;
+}
+
+.h80 {
+  height: 80vh;
+}
+
+.flex {
+  display: flex;
+}
+
+.center {
+  align-items: center;
+}
+
+.space-between {
+ justify-content: space-between;
+ gap: 10px;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mt50 {
+  margin-top: 100px;
+}

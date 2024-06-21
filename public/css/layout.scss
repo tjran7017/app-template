@@ -1,0 +1,25 @@
+@import './variables';
+
+.corner {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  content: '';
+  background: $b;
+  transform: rotate(30deg);
+  color: white;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.top-left {
+  top: -250px;
+  left: -250px;
+  margin: 10px; /* 여백 조정 */
+}
+
+.bottom-right {
+  bottom: -250px;
+  right: -150px;
+  margin: 10px; /* 여백 조정 */
+}

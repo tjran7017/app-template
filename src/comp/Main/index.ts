@@ -1,8 +1,14 @@
 import { Main as MainWrap } from './Main';
-import { MainText } from './MainText';
-import { MainIcons } from './MainIcons';
+import { MainTitle } from './MainTitle';
+import { MainNav } from './MainNav';
+import { MainSkill } from './MainSkill';
+import { MainWork } from './MainWork';
+import { MainProject } from './MainProject';
 
 export const Main = Object.assign(MainWrap, {
-  Icons: MainIcons,
-  Text: MainText,
+  Title: MainTitle,
+  Nav: MainNav,
+  Skill: MainSkill,
+  Work: MainWork,
+  Project: MainProject,
 });

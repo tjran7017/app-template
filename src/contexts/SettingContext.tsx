@@ -1,13 +1,13 @@
 import { createContext, Dispatch, PropsWithChildren, SetStateAction, useState } from 'react';
 
 type Setting = {
-  theme: 'dark';
+  todo: any;
 };
 
 type SettingContextModel = { setting: Setting; setSetting: Dispatch<SetStateAction<Setting>> };
 
 function makeSetting(): Setting {
-  return { theme: 'dark' };
+  return { todo: 'todo' };
 }
 
 export const SettingContext = createContext<SettingContextModel>({

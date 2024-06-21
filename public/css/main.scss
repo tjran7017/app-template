@@ -1,12 +1,16 @@
 @import './variables';
 
-.main-container {
+.loading {
   margin: -45px -60px;
   width: 120px;
   height: 90px;
   position: absolute;
   top: 50%;
   left: 50%;
+}
+
+.loading.hide {
+  display: none;
 }
 
 .dot {
@@ -30,21 +34,6 @@
   80% { transform: scale(.7,1.2) }
   90% { transform: scale(.7,1.2) }
   100% { transform: scale(1,.7) }
-}
-
-.dot.to-square {
-  transform-origin: center;
-  animation: dot-to-square 1s forwards;
-}
-
-@keyframes dot-to-square {
-  0% {
-    transform: scale(1);
-    border-radius: 50%;
-  }
-  100% {
-    border-radius: 0;
-  }
 }
 
 .step {
@@ -75,5 +64,173 @@
     top: 90px;
     right: 90px;
     opacity: 0;
+  }
+}
+
+.container {
+  margin: auto;
+  max-width: 1280px;
+  padding-top: $app-top;
+}
+
+.fade {
+  animation: fade-anim 2s;
+}
+
+@-webkit-keyframes fade-anim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.title {
+  letter-spacing: 5px;
+  font-size: 60px;
+}
+
+.title.sub {
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
+
+.desc {
+  font-family: "Jalnan", serif;
+  font-size: 14px;
+  margin-top: 5px;
+  color: $dark-gray;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: $app-top;
+}
+
+.nav.ul {
+  padding: 0;
+  margin-top: 150px;
+  height: 50vh;
+}
+
+.nav.li {
+  font-size: 20px;
+  height: 20%;
+  list-style: none;
+  opacity: 0.5;
+}
+
+.nav.li.show {
+  opacity: 1;
+}
+
+.skills {
+  animation: skills 1.25s cubic-bezier(.17,.67,0,1);
+}
+
+.section-wrapper {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes skills {
+  0% {
+    left: -500px;
+    opacity: 0;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+$skills01: 70%;
+$skills02: 30%;
+$skills03: 50%;
+$skills04: 50%;
+$skills05: 50%;
+
+section.skills {
+  width: 80%;
+  height: auto;
+
+  p {
+    z-index: 2;
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
+  }
+
+  span {
+    border-radius: 8px;
+  }
+
+  div {
+    padding-top: 5px;
+    span:nth-child(1) {
+      z-index: -2;
+      position: absolute;
+      top: 0; bottom: 0; left: 0; right: 0;
+      margin: auto;
+      background: white;
+      height: 100%;
+      width: 100%;
+
+    }
+
+    span:nth-child(2) {
+      z-index: -1;
+      position: absolute;
+      top: 0; bottom: 0; left: 0; right: 0;
+      background: $b;
+      height: 100%;
+      animation: skills 1.25s cubic-bezier(.17,.67,0,1);
+    }
+  }
+
+  div:nth-child(1) {
+    span:nth-child(2) {
+      width: $skills01;
+      animation-delay: 0s;
+    }
+  }
+
+  div:nth-child(2) {
+    span:nth-child(2) {
+      width: $skills02;
+      animation-delay: 0.05s;
+    }
+  }
+
+  div:nth-child(3) {
+    span:nth-child(2) {
+      width: $skills03;
+      animation-delay: 0.1s;
+    }
+  }
+
+  div:nth-child(4) {
+    span:nth-child(2) {
+      width: $skills04;
+      animation-delay: 0.15s;
+    }
+  }
+
+  div:nth-child(5) {
+    span:nth-child(2) {
+      width: $skills05;
+      animation-delay: 0.2s;
+    }
   }
 }
