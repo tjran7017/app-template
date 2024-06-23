@@ -1,43 +1,32 @@
+import { SkillModel } from './MainSkill.model';
+
 export function MainSkill() {
+  //
+  const skills: SkillModel[] = [
+    { name: 'React.js', percent: 75 },
+    { name: 'Javascript', percent: 50 },
+    { name: 'Typescript', percent: 50 },
+    { name: 'HTML', percent: 50 },
+    { name: 'CSS', percent: 25 },
+  ];
+
+  const handleHover = () => {
+    // todo
+  };
+
   return (
     <div className="section-wrapper fade" id="skill">
-      <section className="skills">
-        <div>
-          <p>
-            React.js
-            <span></span>
-            <span></span>
-          </p>
-        </div>
-        <div>
-          <p>
-            Javascript
-            <span></span>
-            <span></span>
-          </p>
-        </div>
-        <div>
-          <p>
-            Typescript
-            <span></span>
-            <span></span>
-          </p>
-        </div>
-        <div>
-          <p>
-            HTML
-            <span></span>
-            <span></span>
-          </p>
-        </div>
-        <div>
-          <p>
-            CSS
-            <span></span>
-            <span></span>
-          </p>
-        </div>
-      </section>
+      <div className="skills">
+        {skills.map((skill) => (
+          <div key={skill.name}>
+            <p>
+              {skill.name}
+              <span></span>
+              <span className={`percent-${skill.percent}`}></span>
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

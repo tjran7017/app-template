@@ -127,10 +127,6 @@
   opacity: 1;
 }
 
-.skills {
-  animation: skills 1.25s cubic-bezier(.17,.67,0,1);
-}
-
 .section-wrapper {
   position: relative;
   height: 80vh;
@@ -139,7 +135,7 @@
   align-items: center;
 }
 
-@keyframes skills {
+@keyframes skills-anim {
   0% {
     left: -500px;
     opacity: 0;
@@ -150,13 +146,7 @@
   }
 }
 
-$skills01: 70%;
-$skills02: 30%;
-$skills03: 50%;
-$skills04: 50%;
-$skills05: 50%;
-
-section.skills {
+.skills {
   width: 80%;
   height: auto;
 
@@ -195,42 +185,14 @@ section.skills {
       top: 0; bottom: 0; left: 0; right: 0;
       background: $b;
       height: 100%;
-      animation: skills 1.25s cubic-bezier(.17,.67,0,1);
+      animation: skills-anim 1.25s cubic-bezier(.17,.67,0,1);
     }
   }
 
-  div:nth-child(1) {
-    span:nth-child(2) {
-      width: $skills01;
-      animation-delay: 0s;
-    }
-  }
 
-  div:nth-child(2) {
-    span:nth-child(2) {
-      width: $skills02;
-      animation-delay: 0.05s;
-    }
-  }
-
-  div:nth-child(3) {
-    span:nth-child(2) {
-      width: $skills03;
-      animation-delay: 0.1s;
-    }
-  }
-
-  div:nth-child(4) {
-    span:nth-child(2) {
-      width: $skills04;
-      animation-delay: 0.15s;
-    }
-  }
-
-  div:nth-child(5) {
-    span:nth-child(2) {
-      width: $skills05;
-      animation-delay: 0.2s;
+  @each $val in $percentages {
+    .percent-#{$val} {
+      width: percentage($val / 100);
     }
   }
 }
