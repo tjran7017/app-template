@@ -33,7 +33,7 @@ export function MainNav() {
   };
 
   return (
-    <div className="fade w80">
+    <div className="fade">
       <ul className="nav ul">
         {navs.map((nav) => (
           <li key={nav} className="nav li" onClick={handleClickNav(nav)}>

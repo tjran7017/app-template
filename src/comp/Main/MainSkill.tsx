@@ -1,9 +1,9 @@
-import { SkillModel } from './MainSkill.model';
+import type { SkillModel } from './MainSkill.model';
 
 export function MainSkill() {
   //
   const skills: SkillModel[] = [
-    { name: 'React.js', percent: 75 },
+    { name: 'React.js', percent: 50 },
     { name: 'Javascript', percent: 50 },
     { name: 'Typescript', percent: 50 },
     { name: 'HTML', percent: 50 },

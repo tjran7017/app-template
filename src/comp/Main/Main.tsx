@@ -9,6 +9,10 @@ export function Main({ children }: PropsWithChildren) {
     }, 2000);
   }, []);
 
+  const handleClickIcon = () => {
+    window.open('https://github.com/tjran7017/app-template', '_blank');
+  };
+
   const loadingClassName = `loading ${isActive && 'hide'}`;
 
   return (
@@ -19,7 +23,12 @@ export function Main({ children }: PropsWithChildren) {
         <div className="step" id="s2"></div>
         <div className="step" id="s3"></div>
       </div>
-      {isActive && <div className="flex space-between">{children}</div>}
+      {isActive && (
+        <div className="main-container">
+          <img src="/assets/img/git.png" alt="git" className="top-icon" onClick={handleClickIcon} />
+          {children}
+        </div>
+      )}
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { BusinessCardModel } from './BusinessCard.model';
+import type { BusinessCardModel } from './BusinessCard.model';
 
 interface Props {
   cardInfo?: BusinessCardModel;
@@ -7,13 +7,14 @@ interface Props {
 export function BusinessCard({ cardInfo }: Props) {
   //
   const handleClickEmptyCard = () => {
-    // todo
+    const email = 'tjran7017@gmail.com';
+    window.location.href = 'mailto:' + email;
   };
 
   if (!cardInfo) {
     return (
       <div className="business-card empty">
-        <div className="info-grid empty">
+        <div className="info-grid empty" onClick={handleClickEmptyCard}>
           <p>+</p>
         </div>
       </div>
@@ -30,15 +31,15 @@ export function BusinessCard({ cardInfo }: Props) {
       </div>
       <div className="info-grid">
         <div className="name">
-          <h2>Seokmu Yoon</h2>
+          <h2>{cardInfo.company}</h2>
           <h5>{cardInfo.job}</h5>
         </div>
         <div className="period">
-          <img src="/assets/logo/time.svg" alt="time" />
+          <img src="/assets/img/time.svg" alt="time" />
           <p>{cardInfo.period}</p>
         </div>
         <div className="contact">
-          <img src="/assets/logo/contact.svg" alt="laptop" />
+          <img src="/assets/img/contact.svg" alt="laptop" />
           <p>tjran7017@ gmail.com</p>
           <p>010-4288-7980</p>
         </div>

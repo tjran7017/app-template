@@ -1,14 +1,12 @@
-@import './variables';
-
 @font-face {
   font-family: 'Jalnan';
   src: url('../assets/fonts/Jalnan2TTF.ttf');
 }
 
-@font-face {
-  font-family: 'MaruBuri Light';
-  src: url('../assets/fonts/MaruBuri-Light.ttf');
-}
+//@font-face {
+//  font-family: 'MaruBuri Light';
+//  src: url('../assets/fonts/MaruBuri-Light.ttf');
+//}
 
 ::-webkit-scrollbar {
   display: none;
@@ -21,7 +19,7 @@ html {
 
 body {
   margin: 0;
-  color: $dark;
+  color: white;
   font-family: "Jalnan", serif;
   letter-spacing: 2px;
   scroll-behavior: smooth;
@@ -29,46 +27,37 @@ body {
 
 a {
   text-decoration: none;
-  color: $dark;
+  color: white;
 }
 
 p {
   margin: 0;
 }
 
-.w50 {
-  width: 50%;
+#root {
+  background-image: url("../assets/img/background.png");
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
 }
 
-.w80 {
-  width: 80%;
+#root:before {
+  background: black;
+  bottom: 0;
+  content: "";
+  left: 0;
+  opacity: 0.8;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
 }
 
-.h80 {
-  height: 80vh;
-}
-
-.flex {
-  display: flex;
-}
-
-.center {
-  align-items: center;
-}
-
-.space-between {
- justify-content: space-between;
- gap: 10px;
-}
-
-.column {
-  flex-direction: column;
-}
-
-.mt20 {
-  margin-top: 20px;
-}
-
-.mt50 {
-  margin-top: 100px;
+.container {
+  margin: auto;
+  max-width: 1280px;
+  min-height: 100vh;
 }

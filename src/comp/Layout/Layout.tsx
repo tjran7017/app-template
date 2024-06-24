@@ -8,9 +8,9 @@ export function Layout({ children }: PropsWithChildren) {
     <AppErrorBoundary>
       <BrowserRouter>
         <SettingContextProvider>
-          <div className="corner top-left" />
+          {/*<div className="corner top-left" />*/}
           <div className="container">{children}</div>
-          <div className="corner bottom-right" />
+          {/*<div className="corner bottom-right" />*/}
         </SettingContextProvider>
       </BrowserRouter>
     </AppErrorBoundary>
