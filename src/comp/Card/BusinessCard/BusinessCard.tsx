@@ -40,8 +40,7 @@ export function BusinessCard({ cardInfo }: Props) {
         </div>
         <div className="contact">
           <img src="/assets/img/contact.svg" alt="laptop" />
-          <p>tjran7017@ gmail.com</p>
-          <p>010-4288-7980</p>
+          <p>tjran7017@gmail.com</p>
         </div>
       </div>
 
