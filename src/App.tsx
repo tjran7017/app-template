@@ -6,7 +6,7 @@ import { Loading } from '~/comp/_shared/Loading';
 const Index = lazy(() =>
   new Promise((resolve) => {
     setTimeout(() => {
-      resolve();
+      resolve(null);
     }, 2000);
   }).then(() => import('./pages')),
 );
