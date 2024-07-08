@@ -1,3 +1,2 @@
-export { AppErrorBoundary } from './ErrorBoundary';
-export { Main } from './Main';
-export { Layout } from './Layout';
+export { Layout } from './_shared/Layout';
+export { Resume } from './Resume';
