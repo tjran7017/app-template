@@ -1,6 +1,6 @@
 import { createContext, Dispatch } from 'react';
 
-export const Navs = ['about', 'work', 'project'] as const;
+export const Navs = ['about', 'skill', 'project'] as const;
 type NavTuple = typeof Navs;
 export type Nav = NavTuple[number];
 

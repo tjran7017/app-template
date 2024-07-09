@@ -1,80 +1,63 @@
-import { memo, useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { ResumeContext } from '../Resume.model';
 
-type TypingText = { text: string; index: number };
-
-interface Props {
-  tags: string[];
-}
-
-export function ResumeAbout({ tags }: Props) {
+export function ResumeAbout() {
   //
   const id = 'about';
   const { value } = useContext(ResumeContext);
-  const [typingText, setTypingText] = useState<TypingText>({ text: '#프론트엔드', index: 0 });
-  const typingIndex = useRef<number>(0);
+  const host = window.location.hostname + ':~$';
+  const directories = 'work   characteristic';
+  const career = 'Nextree(3y2m)';
+  const characteristic = '즐기는   고민하는   배움이_빠른   호기심_많은';
+  const typingText = ` whoami
+  -yoonseokmu
+  --# cd /Users/yoonseokmu
+  -# ls
+  -${directories}
+  --# cd work
+  -# ls
+  -${career}
+  --# cd ../characteristic
+  -# ls
+  -${characteristic}`;
 
   useEffect(() => {
     if (value !== id) return;
 
     function typing(i: number) {
-      if (i >= typingText.text.length || (i !== 0 && typingIndex.current !== typingText.index)) return;
+      const element = document.getElementById('typing');
+      if (!element) return;
+      const nextIndex = i + 1;
+      let nextText = typingText.substring(0, nextIndex);
+      if (nextIndex === typingText.length + 1) return;
+      nextText = nextText.replaceAll('-', '<br>');
+      nextText = nextText.replaceAll('#', host);
 
-      typingIndex.current = typingText.index;
-      const typingSpan = document.querySelector('#typing');
-      if (!typingSpan) return;
-      typingSpan.innerHTML = typingText.text.substring(0, i + 1);
+      element.innerHTML = nextText;
       setTimeout(() => {
         typing(i + 1);
-      }, 150);
+      }, 50);
     }
 
-    typing(0);
-  }, [typingText, value]);
-
-  const handleClickTag = (value: TypingText) => setTypingText({ ...value });
+    setTimeout(() => {
+      typing(0);
+    }, 500);
+  }, [value]);
 
   if (value !== id) return null;
   return (
     <section className="section-wrapper" id={id}>
       <div className="about-wrap">
-        <div className="about-title-wrap">
-          <span id="typing" className="typing" />
-          개발자
+        <div className="terminal-bar">
+          <div />
+          <div />
+          <div />
         </div>
-        <MemoizedTags tags={tags} onClickTag={handleClickTag} />
-
-        <div className="about-icon-wrap fade">
-          <i title="React" className="devicon-react-original-wordmark"></i>
-          <i title="Javascript" className="devicon-javascript-plain"></i>
-          <i title="Typescript" className="devicon-typescript-plain"></i>
-          <i title="HTML5" className="devicon-html5-plain-wordmark"></i>
-          <i title="CSS3" className="devicon-css3-plain-wordmark"></i>
-          <i title="Vite" className="devicon-vitejs-plain"></i>
-          <i title="MobX" className="devicon-mobx-plain"></i>
+        <div className="terminal-screen">
+          <span className="terminal-text">{host}</span>
+          <span className="terminal-text typing" id="typing" />
         </div>
       </div>
     </section>
   );
 }
-
-interface TagsProps {
-  tags: string[];
-  onClickTag: (value: TypingText) => void;
-}
-function Tags({ tags, onClickTag }: TagsProps) {
-  //
-  const handleClickTag = (tag: string, index: number) => () => onClickTag({ text: tag, index });
-  return (
-    <div className="about-tag-wrap fade">
-      {tags.map((tag, index) => (
-        <span key={tag} onClick={handleClickTag(tag, index)}>
-          {tag}
-        </span>
-      ))}
-    </div>
-  );
-}
-
-const tagsAreEqual = (props: TagsProps, nextProps: TagsProps) => props.tags === nextProps.tags;
-const MemoizedTags = memo(Tags, tagsAreEqual);

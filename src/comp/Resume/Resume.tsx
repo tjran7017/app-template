@@ -16,8 +16,8 @@ export function Resume() {
           <ResumeIntro.Contact />
         </ResumeIntro>
         <ResumeDetail>
-          <ResumeDetail.About tags={['#프론트엔드', '#고민하는', '#즐기는', '#배움이 빠른', '#호기심 많은']} />
-          <ResumeDetail.Work />
+          <ResumeDetail.About />
+          <ResumeDetail.Skill />
           <ResumeDetail.Project />
         </ResumeDetail>
       </div>
