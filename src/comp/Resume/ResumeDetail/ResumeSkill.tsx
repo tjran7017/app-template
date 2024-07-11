@@ -40,7 +40,7 @@ export function ResumeSkill() {
 
   if (value !== id) return null;
   return (
-    <section className="section-wrapper" id={id}>
+    <section className="section-wrapper reduction" id={id}>
       <span className="sphere"></span>
     </section>
   );

@@ -1,4 +1,5 @@
 # App template
 
 React + Vite를 활용한 프로젝트입니다.
-https://smyoon.netlify.app/
+
+https://seokmuyoon.info

@@ -3,10 +3,10 @@
   src: url('../assets/fonts/Jalnan2TTF.ttf');
 }
 
-//@font-face {
-//  font-family: 'MaruBuri Light';
-//  src: url('../assets/fonts/MaruBuri-Light.ttf');
-//}
+@font-face {
+  font-family: 'MaruBuri SemiBold';
+  src: url('../assets/fonts/MaruBuri-SemiBold.ttf');
+}
 
 ::-webkit-scrollbar {
   display: none;
@@ -19,9 +19,15 @@ html {
 body {
   margin: 0;
   color: white;
-  font-family: "Jalnan", serif;
+  font-family: "Jalnan", "MaruBuri SemiBold", serif;
   letter-spacing: 2px;
   scroll-behavior: smooth;
+}
+
+body *,
+body *:before,
+body *:after {
+  box-sizing: border-box;
 }
 
 a {

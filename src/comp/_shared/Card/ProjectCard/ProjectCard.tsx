@@ -1,36 +1,29 @@
 import { ProjectCardModel } from './ProjectCard.model';
 
 interface Props {
-  projectData: ProjectCardModel;
+  projectData: ProjectCardModel[];
 }
 
 export function ProjectCard({ projectData }: Props) {
-  const { key, src, name, desc, tags, period, job } = projectData;
-  const descStrings = desc.split('/');
-
   return (
-    <div className="projects-card-wrap">
-      <div className="project-img">
-        <img src={src} alt={name} />
-      </div>
-      <div className="project-info">
-        <div className="project-tags">
-          {tags.map((tag) => (
-            <span key={name.concat(tag)}>{tag}</span>
-          ))}
-        </div>
-        <div className="project-title">
-          <h3>{name}</h3>
-        </div>
-        <div className="project-description">
-          {descStrings.map((value, index) => (
-            <p key={key.concat(index.toString())}>- {value}</p>
-          ))}
-        </div>
-        <div className="project-period">
-          {period} / {job}
-        </div>
-      </div>
-    </div>
+    <ul className="project-list-wrap">
+      {projectData.map((project) => (
+        <li key={project.key} className="project-item">
+          <div className="thumb">
+            <img src={project.src} alt={project.name} />
+          </div>
+          <div className="description">
+            <h3>{project.name}</h3>
+            <p className="detail">{project.desc}</p>
+            <p>{project.period}</p>
+            <div className="tags-wrap">
+              {project.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
   );
 }
