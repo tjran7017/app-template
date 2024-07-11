@@ -19,7 +19,7 @@ export function ResumeProject() {
     },
     {
       key: 'skon',
-      src: '/assets/img/skon.png',
+      src: '/assets/img/skon_0.png',
       tags: ['React', 'Typescript', 'Vite', 'MobX', 'React Query', 'Nginx'],
       name: 'SKON 배터리 아카데미',
       desc: 'SK ON 직원을 대상으로한 다국어 지원 사내 아카데미 서비스 개발 프로젝트로, 초기 개발부터 참여하여 사용자와 관리자 화면 개발과 1, 2차 오픈 및 운영을 경험하였습니다.',
@@ -28,7 +28,7 @@ export function ResumeProject() {
     },
     {
       key: 'kto',
-      src: '/assets/img/kto.png',
+      src: '/assets/img/kto_0.png',
       tags: ['React', 'Typescript', 'Rollup', 'Next.js', 'MobX', 'Storybook', 'Spring Boot', 'MySql', 'Kafka'],
       name: '디지털관광자원 통합관리시스템',
       desc: '한국관광공사에 등록된 50만건 이상의 관광정보를 통합 관리 및 이용을 위한 시스템 개발 프로젝트로, 중간에 투입되어 사용자와 관리자 서비스 개발에 참여하여 서비스 오픈을 마쳤습니다.',
