@@ -23,11 +23,12 @@ export function ResumeAbout() {
   -${characteristic}`;
 
   useEffect(() => {
-    if (isUpdated.current) return;
     if (value !== id) {
       isUpdated.current = false;
       return;
     }
+    if (isUpdated.current) return;
+
 
     function typing(index: number) {
       const nextIndex = index + 1;
