@@ -1,10 +1,11 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { ResumeContext } from '../Resume.model';
 
 export function ResumeAbout() {
   //
   const id = 'about';
   const { value } = useContext(ResumeContext);
+  const isUpdated = useRef<boolean>(false);
   const host = window.location.hostname + ':~$';
   const directories = 'work   characteristic';
   const career = 'Nextree(3y2m)';
@@ -22,26 +23,32 @@ export function ResumeAbout() {
   -${characteristic}`;
 
   useEffect(() => {
-    if (value !== id) return;
+    if (isUpdated.current) return;
+    if (value !== id) {
+      isUpdated.current = false;
+      return;
+    }
 
-    function typing(i: number) {
+    function typing(index: number) {
+      const nextIndex = index + 1;
       const element = document.getElementById('typing');
       if (!element) return;
-      const nextIndex = i + 1;
-      let nextText = typingText.substring(0, nextIndex);
+
+      let nextText = typingText.substring(index, nextIndex);
       if (nextIndex === typingText.length + 1) return;
+
+      const currentInnerHTML = element.innerHTML;
       nextText = nextText.replaceAll('-', '<br>');
       nextText = nextText.replaceAll('#', host);
+      element.innerHTML = currentInnerHTML + nextText;
 
-      element.innerHTML = nextText;
       setTimeout(() => {
-        typing(i + 1);
+        typing(nextIndex);
       }, 50);
     }
 
-    setTimeout(() => {
-      typing(0);
-    }, 500);
+    isUpdated.current = true;
+    typing(0);
   }, [value]);
 
   if (value !== id) return null;
