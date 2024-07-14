@@ -1,2 +1,2 @@
-export { Layout } from './_shared/Layout';
+export { Layout, Loading, Error } from './_shared';
 export { Resume } from './Resume';
