@@ -6,6 +6,7 @@ export function ResumeAbout() {
   const id = 'about';
   const { value } = useContext(ResumeContext);
   const isUpdated = useRef<boolean>(false);
+  const spanRef = useRef<HTMLSpanElement | null>(null);
   const host = window.location.hostname + ':~$';
   const directories = 'work   characteristic';
   const career = 'Nextree(3y2m)';
@@ -29,17 +30,16 @@ export function ResumeAbout() {
     }
     if (isUpdated.current) return;
 
-
     function typing(index: number) {
       const nextIndex = index + 1;
-      const element = document.getElementById('typing');
+      const element = spanRef.current;
       if (!element) return;
 
       let nextText = typingText.substring(index, nextIndex);
       if (nextIndex === typingText.length + 1) return;
 
       const currentInnerHTML = element.innerHTML;
-      nextText = nextText.replaceAll('-', '<br>');
+      nextText = nextText.replaceAll('-', '<br/>');
       nextText = nextText.replaceAll('#', host);
       element.innerHTML = currentInnerHTML + nextText;
 
@@ -62,8 +62,9 @@ export function ResumeAbout() {
           <div />
         </div>
         <div className="terminal-screen">
-          <span className="terminal-text">{host}</span>
-          <span className="terminal-text typing" id="typing" />
+          <span className="terminal-text" ref={spanRef}>
+            {host}
+          </span>
         </div>
       </div>
     </section>
