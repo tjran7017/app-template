@@ -1,4 +1,4 @@
-import { PageLoading } from './PageLoading';
+import { PageLoading } from './view';
 
 interface Props {
   type: 'page';

@@ -9,7 +9,7 @@
   position: relative;
   margin: 20px auto;
   overflow: hidden;
-  box-shadow: 2px 5px 15px 0px #17161694;
+  box-shadow: 2px 5px 15px 0 #17161694;
   background-color: #122529;
 
   @media (max-width: 1280px) {
@@ -55,7 +55,7 @@
   }
 
 
-  .info-grid {
+  .info-container {
     color: #343536;
     grid-column: 2/3;
     grid-row: 2/3;
@@ -71,7 +71,7 @@
     grid-template-rows: repeat(3, 1fr);
     line-height: 1px;
 
-    .name {
+    .title {
       grid-column: 2 / span 2;
       grid-row: 1 / span 1;
       font-size: 1.2em;
@@ -106,7 +106,7 @@
     }
   }
 
-  .info-grid.empty {
+  .info-container.empty {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,7 +132,7 @@
 }
 
 
-.work-card-wrap {
+.work-card-container {
   width:350px;
   border-radius: 40px;
   background-image: $bg-shape-color;
@@ -219,13 +219,13 @@
 
 $trans: all 0.4s ease 0s;
 
-.project-list-wrap {
+.project-list-container {
   width: 100%;
   padding: 0;
   margin: 0;
 }
 
-.project-item {
+.project-item-container {
   --deg: 86;
 
   margin: 1.5em 0 0.5em;
@@ -241,7 +241,7 @@ $trans: all 0.4s ease 0s;
   transform: scale(0.85);
   transition: $trans;
 
-  .thumb {
+  .thumb-wrap {
     width: 160px;
     height: 160px;
     float: left;
@@ -270,7 +270,7 @@ $trans: all 0.4s ease 0s;
     }
   }
 
-  .description {
+  .detail {
     padding-top: 1vmin;
 
     h3 {
@@ -325,12 +325,12 @@ $trans: all 0.4s ease 0s;
 
 
 //@for $i from 1 through 10 {
-//  .project-item:nth-child(#{$i}) {
+//  .project-item-container:nth-child(#{$i}) {
 //    animation-delay: 0.1s * ($i - 1);
 //  }
 //}
 
-.project-item:nth-of-type(even) {
+.project-item-container:nth-of-type(even) {
   text-align: right;
   background: linear-gradient(
                   -83deg,
@@ -338,7 +338,7 @@ $trans: all 0.4s ease 0s;
                   #fff0 calc(97% + 1px) 100%
   );
 
-  .thumb {
+  .thumb-wrap {
     --deg: 86deg;
     float: right;
     margin-left: 2em;
@@ -359,12 +359,12 @@ $trans: all 0.4s ease 0s;
   }
 }
 
-.project-item:hover {
+.project-item-container:hover {
   transform: scale(1);
   transition: $trans;
   filter: drop-shadow(0px 20px 10px #0008);
 
-  .thumb {
+  .thumb-wrap {
     padding: 0.2em;
     transition: $trans;
     transform: rotate(-1deg);
@@ -382,6 +382,6 @@ $trans: all 0.4s ease 0s;
   }
 }
 
-.project-item:nth-of-type(even):hover .thumb {
+.project-item-container:nth-of-type(even):hover .thumb-wrap {
   --deg: 91deg;
 }

@@ -166,7 +166,7 @@
   }
 }
 
-.section-wrapper {
+.contents-section-container {
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -227,13 +227,13 @@
     top: 10px;
     right: 10px;
   }
+
+  .contact-img:hover {
+    fill: white;
+  }
 }
 
-.contact-img:hover {
-  fill: white;
-}
-
-.about-wrap {
+.terminal-wrap {
   display: flex;
   justify-content: center;
   flex-direction: column;

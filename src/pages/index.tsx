@@ -1,7 +1,7 @@
-import { Resume } from '~/comp';
+import { SimpleResume } from '~/comp';
 
 function Page() {
-  return <Resume />;
+  return <SimpleResume />;
 }
 
 export default Page;
