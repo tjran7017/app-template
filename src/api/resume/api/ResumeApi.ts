@@ -7,7 +7,7 @@ export async function findProjectsByCompany(company?: string): Promise<ProjectMo
       src: '/assets/img/donga.png',
       tags: ['React', 'Typescript', 'Vite', 'React Query', 'Next.js', 'Spring Boot', 'MySql'],
       name: 'DS스토어 모더니제이션',
-      description: '기존 동아사이언스 쇼핑몰 시스템을 MSA 기반으로 재개발하는 프로젝트로, 기존 PHP 코드를 Typescript 기반의 React로 리팩토링 진행',
+      description: '기존 동아사이언스 쇼핑몰 시스템을 MSA 기반으로 재개발하는 프로젝트',
       period: '2023.11 - 2024.02',
       job: '풀스택',
     },
