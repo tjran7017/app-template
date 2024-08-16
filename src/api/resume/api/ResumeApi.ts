@@ -43,7 +43,7 @@ export async function findProjectsByCompany(company?: string): Promise<ProjectMo
       src: '/assets/img/nextree.png',
       tags: ['React', 'Typescript', 'Rollup', 'Next.js', 'MobX', 'Storybook'],
       name: '나라 플랫폼 2.0',
-      description: '다양한 프로젝트에서 공통된 도메인 및 기능 제공을 위한 사내 서비스로, 도메인 변경으로 인한 버전업 진행',
+      description: 'SI SaaS 플랫폼 중 작업 공간 관리 서비스 개발',
       period: '2021.04 - 2021.07',
       job: '프론트엔드',
     },
