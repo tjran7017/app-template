@@ -39,7 +39,7 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': 'off',
     'react-hooks/exhaustive-deps': 'off',
     'react/react-in-jsx-scope': 'off',
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', 'tsx'] }],
     'no-unused-expressions': ['error', { allowShortCircuit: true, allowTernary: true }],
     'import/no-extraneous-dependencies': [
       'error',
