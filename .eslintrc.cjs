@@ -7,7 +7,7 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'eslint-config-prettier',
   ],
-  plugins: ['react', 'react-hooks', 'prettier', 'jsx-a11y', 'import'],
+  plugins: ['react', 'prettier', 'jsx-a11y', 'import'],
   settings: {
     react: {
       version: 'detect',
