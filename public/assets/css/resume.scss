@@ -1,0 +1,657 @@
+@import '_shared/variables';
+@import '_shared/animations';
+
+.intro-container {
+  position: sticky;
+  top: 0;
+  background-image: url('../image/background2.jpg');
+  height: 100vh;
+
+  .intro-title-container {
+    position: relative;
+    height: 100vh;
+
+    .intro-title {
+      color: #222;
+      height: 90vmin;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 78vmin;
+
+      div {
+        height: 50%;
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+      }
+    }
+
+    .text {
+      font-size: 8vmin;
+      position: absolute;
+
+      span {
+        display: block;
+      }
+    }
+
+    .text-top {
+      border-bottom: 1vmin solid #000;
+      top: 0;
+
+      div {
+        animation: showTopText 1s;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+        bottom: 0;
+        transform: translate(0, -300%);
+
+        span:first-child {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .text-bottom {
+      bottom: 0;
+      color: white;
+      font-weight: bold;
+
+      div {
+        padding: 2vmin 0;
+        animation: showBottomText 0.5s;
+        animation-delay: 1.75s;
+        animation-fill-mode: forwards;
+        top: 0;
+        transform: translate(0, -100%);
+      }
+    }
+  }
+}
+
+.widget-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  @include flex-column(10px);
+  @include fadeY(2.5s);
+
+  button {
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    @include shadow;
+    @include flex-center;
+
+    img {
+      width: 75%;
+    }
+  }
+}
+
+.intro-scroll-guide {
+  position: absolute;
+  bottom: 20px;
+  z-index: 2;
+
+  width: 100%;
+  @include flex-center;
+  @include fadeY(2.5s);
+
+  img {
+    animation: bounce 2s linear infinite;
+    width: 80px;
+  }
+}
+
+.bg-dark {
+  background: $background;
+}
+
+.fade-target {
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.in-View {
+  opacity: 0;
+  animation: fadeIn 2s both;
+}
+
+.about-container {
+  @include flex-column(80px);
+  position: relative;
+  color: $white;
+  padding: 3vmin;
+
+  @include respond(tablet) {
+    gap: 35px;
+  }
+
+  .about-title {
+    font-size: 3.75rem;
+    width: 100%;
+
+    @include respond(tablet) {
+      font-size: 2rem;
+    }
+  }
+
+  .about-contents {
+    @include flex-start;
+    gap: 50px;
+    flex-wrap: wrap;
+    width: 100%;
+
+    @include respond(tablet) {
+      align-items: center;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .skills {
+      width: 40%;
+      min-width: 320px;
+
+      .skill-wrap {
+        @include flex-column(10px);
+        width: 100%;
+        gap: 3px;
+        margin-top: 10px;
+
+        .skill-wrap-title {
+          font-size: 24px;
+          width: 100%;
+
+          @include respond(phone) {
+            font-size: 18px;
+          }
+        }
+
+        .skill-icon-wrap {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          width: 100%;
+
+          .skill-icon {
+            @include flex-center;
+            @include shadow;
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            background: #DFDFDF;
+            img {
+              width: 75%;
+            }
+          }
+        }
+
+
+      }
+    }
+
+    .terminal {
+      background: #292A36;
+      width: 40%;
+      min-width: 320px;
+      @include shadow-mac;
+
+      @include respond(tablet) {
+        width: 70%;
+      }
+
+      .terminal-bar {
+        position: relative;
+        text-align: center;
+        height: 25px;
+        background-color: #39393B;
+        margin: 0 auto;
+        font-family: monospace;
+        float: none;
+        border-radius: 5px 5px 0 0;
+        padding: 0 5px 0 5px;
+
+        div {
+          border-radius: 100%;
+          width: 12px;
+          height: 12px;
+          position: absolute;
+          bottom: 5px;
+          @include shadow;
+        }
+        div:nth-child(1) {
+          background-color: #FE6057;
+          left: 5px;
+        }
+        div:nth-child(2) {
+          background-color: #FEBC2F;
+          left: 25px;
+        }
+        div:nth-child(3) {
+          background-color: #26C840;
+          left: 45px;
+        }
+      }
+      .terminal-screen {
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        height: 420px;
+        border-radius: 0 0 5px 5px;
+        margin: 0 auto;
+        padding: 10px;
+      }
+      .terminal-text {
+        width: fit-content;
+        color: $white;
+        font-family: monospace;
+        font-size: 15px;
+        border-right: .05em solid;
+        animation: typing-anim 1s steps(1) infinite;
+        margin: 0;
+        letter-spacing: 1px;
+        line-height: 22px;
+      }
+    }
+  }
+}
+
+
+.experience-container {
+  position: relative;
+  display: flex;
+  padding-top: 300px;
+
+  @include respond(tablet) {
+    flex-direction: column;
+  }
+
+  .experience-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    @include respond(tablet) {
+      top: 0;
+      height: auto;
+      padding: 15px 0 5px 30px;
+      background: $background;
+    }
+
+    ul {
+      width: 350px;
+      padding-top: 20px;
+      @include respond(tablet) {
+        display: flex;
+        padding: 0;
+        gap: 20px;
+        width: auto;
+      }
+
+      li {
+        list-style: none;
+        cursor: pointer;
+        margin-bottom: 10px;
+        color: $dark-gray;
+        font-weight: 900;
+        font-size: 3.75rem;
+        line-height: 1;
+        z-index: 10;
+
+        @include respond(tablet) {
+          font-size: 2rem;
+        }
+
+      }
+      li:hover {
+        color: $light-gray;
+      }
+      li.focus {
+        color: $white;
+      }
+    }
+  }
+
+  .contents-container {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 400px;
+    padding-bottom: 500px;
+    overflow: hidden;
+
+    @include respond(tablet) {
+      margin-top: 50px;
+    }
+
+    .works-wrap {
+      @include grid-container(2);
+      @include respond(pc-small) {
+        @include grid-container(1);
+      }
+
+      .work-card {
+        width: 80%;
+        margin: auto;
+        background-color: #f4f5f2;
+        text-align: center;
+        border-top-left-radius: 4rem;
+        border: 2px solid #fff;
+        position: relative;
+      }
+
+      .work-card::before {
+        content: "";
+        position: absolute;
+        height: 30px;
+        width: 120px;
+        background-color: $dark-gray;
+        top: 32px;
+        right: -2.5px;
+        -webkit-clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+      }
+
+      .work-card-body {
+        padding: 2rem 1.5rem;
+        max-width: 25ch;
+        margin: auto;
+
+        .work-card-img {
+          width: 100%;
+          img { width: 100% }
+        }
+      }
+
+      .work-card-title {
+        font-weight: 800;
+        color: #121513;
+        font-size: 2.2rem;
+        margin-block: 1.5rem 0.75rem;
+      }
+
+      .work-card-title.sub {
+        font-size: 1.1rem;
+        margin-block: 0;
+        color: $dark-gray;
+      }
+
+
+      .work-card-desc {
+        color: #303830;
+        font-size: 1rem;
+        text-align: start;
+        white-space: pre-wrap;
+      }
+
+      .work-card-ribbon {
+        margin-top: 1.5rem;
+        display: grid;
+        place-items: center;
+        height: 50px;
+        background-color: $dark-gray;
+        position: relative;
+        width: 110%;
+        left: -5%;
+        top: 10px;
+        border-radius: 0 0 2rem 2rem;
+      }
+
+      .work-card-ribbon::after,
+      .work-card-ribbon::before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        aspect-ratio: 1/1;
+        bottom: 100%;
+        z-index: -2;
+        background-color: $dark-gray;
+      }
+
+      .work-card-ribbon::before {
+        left: 0;
+        transform-origin: left bottom;
+        transform: rotate(45deg);
+      }
+
+      .work-card-ribbon::after {
+        right: 0;
+        transform-origin: right bottom;
+        transform: rotate(-45deg);
+      }
+
+      .work-card-ribbon-label {
+        width: 84px;
+        aspect-ratio: 1/1;
+        background-color: #fff;
+        position: relative;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        border: 8px solid $dark-gray;
+        display: grid;
+        place-items: center;
+        font-weight: 900;
+        line-height: 1;
+        font-size: 1.5rem;
+      }
+
+      .work-card-ribbon-label::before,
+      .work-card-ribbon-label::after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        bottom: 50%;
+      }
+
+      .work-card-ribbon-label::before {
+        right: calc(100% + 4px);
+        border-bottom-right-radius: 20px;
+        box-shadow: 5px 5px 0 $dark-gray;
+      }
+
+      .work-card-ribbon-label::after {
+        left: calc(100% + 4px);
+        border-bottom-left-radius: 20px;
+        box-shadow: -5px 5px 0 $dark-gray;
+      }
+    }
+
+    .projects-wrap {
+      $project-margin-top: 5px;
+
+      @include respond(tablet) {
+        @include flex-column(1);
+      }
+
+      .project-card {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        margin-bottom: 100px;
+
+        @include respond(pc-small) {
+          @include grid-container(1);
+        }
+
+        @include respond(tablet) {
+          @include flex-column(1);
+          width: 90%;
+        }
+
+        .project-work {
+          width: 300px;
+          height: 100%;
+          font-weight: bold;
+          color: $light-gray;
+          border-right: 2px solid $light-gray;
+          padding: 20px 0 0 0;
+
+          @include respond(pc-small) {
+            width: 95%;
+            height: 80%;
+            border-right: 0;
+            border-bottom: 2px solid $light-gray;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          }
+
+          p {
+            margin: $project-margin-top 0 0 0;
+            padding: 0 0 10px 0;
+          }
+
+          .project-period {
+            font-size: 1.8rem;
+            @include respond(tablet) {
+              font-size: 1.3rem;
+            }
+          }
+
+          .project-job {
+            font-size: 1.3rem;
+          }
+        }
+
+        .project-contents {
+          color: $white;
+          padding: 20px 50px 0 40px;
+
+          @include respond(tablet) {
+            width: 90%;
+            padding-left: 0;
+            padding-right: 0;
+          }
+
+          p {
+            margin-top: $project-margin-top;
+          }
+
+          ul {
+            padding: 0 0 0 20px;
+          }
+
+
+          .project-title {
+            border-left: 10px solid $white;
+            padding-left: 20px;
+            padding-top: 5px;
+            font-size: 2rem;
+            display: flex;
+            gap: 6px;
+
+            @include respond(pc-small) {
+              font-size: 1.8rem;
+            }
+
+            @include respond(tablet) {
+              font-size: 1.6rem;
+            }
+
+            span {
+              width: 37px;
+              height: 37px;
+              background-color: $light-gray;
+              border-radius: 8px;
+              @include flex-center;
+
+              img {
+                width: 70%;
+              }
+            }
+          }
+
+          .project-sub-title {
+            font-size: 1.15rem;
+            white-space: pre-wrap;
+          }
+
+          .project-description {
+            @include respond(tablet) {
+              padding-left: 10px;
+            }
+            li {
+              margin-bottom: 8px;
+              font-size: 1.1rem;
+            }
+          }
+
+          .project-link {
+            margin-top: 20px;
+            font-size: 1.1rem;
+
+            a {
+              background-image: linear-gradient(to right, $white, $white 50%, $light-gray 50%);
+              background-size: 200% 100%;
+              background-position: -100%;
+              display: inline-block;
+              padding: 5px 0;
+              position: relative;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              transition: all 0.3s ease-in-out;
+            }
+
+            a:before{
+              content: '';
+              background: $white;
+              display: block;
+              position: absolute;
+              bottom: -3px;
+              left: 0;
+              width: 0;
+              height: 3px;
+              transition: all 0.3s ease-in-out;
+            }
+
+            a:hover {
+              background-position: 0;
+            }
+
+            a:hover::before{
+              width: 100%;
+            }
+          }
+
+          .project-skills {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+
+            .skill-icon {
+              @include flex-center;
+              @include shadow;
+              width: 50px;
+              height: 50px;
+              border-radius: 10px;
+              background: #DFDFDF;
+              img {
+                width: 75%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

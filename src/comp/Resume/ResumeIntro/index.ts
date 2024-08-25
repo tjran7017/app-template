@@ -1,0 +1,1 @@
+export { ResumeIntro } from './ResumeIntro';

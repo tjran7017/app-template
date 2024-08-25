@@ -1,1 +1,1 @@
-export { SimpleResume } from './SimpleResume/SimpleResume';
+export { ResumeContainer } from './ResumeContainer';

@@ -7,7 +7,7 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'eslint-config-prettier',
   ],
-  plugins: ['react', 'prettier', 'jsx-a11y', 'import'],
+  plugins: ['react', 'prettier', 'jsx-a11y', 'import', '@typescript-eslint'],
   settings: {
     react: {
       version: 'detect',
@@ -24,6 +24,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',

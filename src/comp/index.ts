@@ -1,2 +1,2 @@
-export { Layout, Loading, Error } from './_shared';
-export { SimpleResume } from './Resume';
+export { Layout, Loading } from './_shared';
+export { ResumeContainer as Resume } from './Resume';

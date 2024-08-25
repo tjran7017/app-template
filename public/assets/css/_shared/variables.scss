@@ -1,0 +1,66 @@
+$background: #232323;
+$white: #DFDFDF;
+$dark-gray: #373737;
+$light-gray: #4a4a4a;
+
+@mixin flex-start {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-column($gap: 0) {
+  @include flex-center;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin grid-container($repeat: 2, $gap: 30px) {
+  display: grid;
+  grid-template-columns: repeat($repeat, minmax(0, 1fr));
+  grid-gap: $gap;
+}
+
+@mixin grid-item {
+  width: 90%;
+  height: 30rem;
+  background-color: $dark-gray;
+  border-radius: 10px;
+  margin: auto;
+}
+
+@mixin shadow {
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+}
+
+@mixin shadow-mac {
+  box-shadow: rgba(0, 0, 0, 0.2) 0 20px 30px;
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 500px) { @content; }
+  }
+  @if $breakpoint == tablet {
+    @media (max-width: 768px) { @content; }
+  }
+  @if $breakpoint == pc-small {
+    @media (max-width: 1280px) { @content; }
+  }
+  @if $breakpoint == pc-medium {
+    @media (max-width: 1680px) { @content; }
+  }
+
+}
