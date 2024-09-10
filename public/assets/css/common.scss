@@ -1,7 +1,24 @@
 @font-face {
   font-family: 'nanum';
-  src: url('../font/NanumBarunGothicBold.otf') format('truetype');
+  src: url('../font/NanumBarunGothicBold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: 'nanum';
+  src: url('../font/NanumBarunGothicLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nanum';
+  src: url('../font/NanumBarunGothic.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
 
 body {
   font-family: 'nanum', serif;
