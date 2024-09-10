@@ -15,7 +15,7 @@ function App() {
     <Layout>
       <Suspense fallback={<Loading type="page" />}>
         <Routes>
-          <Route path="/" element={<Resume />} />
+          <Route path="/" element={<Index />} />
         </Routes>
       </Suspense>
     </Layout>
