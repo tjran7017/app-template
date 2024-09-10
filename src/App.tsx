@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Layout, Loading } from './comp';
+import { Layout, Loading, Resume } from './comp';
 
 const Index = lazy(() =>
   new Promise((resolve) => {
@@ -15,7 +15,7 @@ function App() {
     <Layout>
       <Suspense fallback={<Loading type="page" />}>
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<Resume />} />
         </Routes>
       </Suspense>
     </Layout>
