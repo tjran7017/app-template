@@ -1,5 +1,10 @@
+@font-face {
+  font-family: 'nanum';
+  src: url('../font/NanumBarunGothicBold.otf') format('truetype');
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'nanum', serif;
   margin: 0;
   min-width: 375px;
   scroll-behavior: smooth;

@@ -219,7 +219,6 @@
         height: 25px;
         background-color: #39393B;
         margin: 0 auto;
-        font-family: monospace;
         float: none;
         border-radius: 5px 5px 0 0;
         padding: 0 5px 0 5px;
@@ -257,7 +256,6 @@
       .terminal-text {
         width: fit-content;
         color: $white;
-        font-family: monospace;
         font-size: 15px;
         border-right: .05em solid;
         animation: typing-anim 1s steps(1) infinite;
