@@ -4,7 +4,8 @@
 .intro-container {
   position: sticky;
   top: 0;
-  background-image: url('../image/background2.jpg');
+  background-image: url('../image/background.jpg');
+  background-size: cover;
   height: 100vh;
 
   .intro-title-container {

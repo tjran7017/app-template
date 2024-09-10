@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Layout, Resume } from './comp';
+import { Layout, Loading } from './comp';
+
+const Index = lazy(() =>
+  new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(null);
+    }, 1500);
+  }).then(() => import('./comp/Resume/ResumeContainer')),
+);
 
 function App() {
   return (
     <Layout>
-      <Routes>
-        <Route path="/" element={<Resume />} />
-      </Routes>
+      <Suspense fallback={<Loading type="page" />}>
+        <Routes>
+          <Route path="/" element={<Index />} />
+        </Routes>
+      </Suspense>
     </Layout>
   );
 }

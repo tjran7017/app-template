@@ -4,7 +4,7 @@ import { ResumeAbout } from './ResumeAbout';
 import { ResumeExperience } from './ResumeExperience';
 import { useEffect } from 'react';
 
-export function ResumeContainer() {
+function ResumeContainer() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -36,3 +36,5 @@ export function ResumeContainer() {
     </>
   );
 }
+
+export default ResumeContainer;

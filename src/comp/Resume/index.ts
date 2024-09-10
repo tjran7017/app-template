@@ -1,1 +1,1 @@
-export { ResumeContainer } from './ResumeContainer';
+export { default as ResumeContainer } from './ResumeContainer';
