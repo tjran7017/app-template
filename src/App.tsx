@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Layout, Loading, Resume } from './comp';
+import { Layout, Resume } from './comp';
 
 function App() {
   return (
